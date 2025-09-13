@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
     const response = await fetch(targetUrl, {
       redirect: "follow",
       headers: {
-        "user-agent": req.headers["user-agent"] || ""
+        "user-agent": "VLC/3.0.18 LibVLC/3.0.18"
       }
     });
 
