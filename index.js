@@ -64,7 +64,8 @@ app.get("/", async (req, res) => {
     const buffer = await response.arrayBuffer();
     return res.status(response.status).send(Buffer.from(buffer));
   } catch (err) {
-    return res.status(500).send("Error fetching target URL");
+    console.error("Fetch error:", err.message);
+    return res.status(500).send("Error fetching target URL: " + err.message);
   }
 });
 
